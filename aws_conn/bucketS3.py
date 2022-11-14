@@ -2,10 +2,10 @@ import pandas as pd
 import boto3
 import pyodbc
 
-# BUCKET CONN
+# S3 BUCKET CONN
 bucket_name = 'sam_bucket'
 object_key = 'arquivo_exemplo.csv'
-aws_client = boto3.client('s3')
+aws_client = boto3.client('s3')  # PATH SHOULD INCL AWS SECRET / AWS KEY
 
 # GET CSV
 get_csv_from_s3 = aws_client.get_object(Bucket=bucket_name, Key=object_key)
@@ -26,4 +26,3 @@ connection = pyodbc.connect('DRIVER={driver};'
 
 cursor = connection.cursor()
 cursor.execute(sql_str)
-
