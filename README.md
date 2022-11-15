@@ -1,4 +1,4 @@
-# Python Script 
+# Running app  
 ```
-aws_conn/bucketS3.py
+python bucketS3_v3.py <bucket_name> <object_key>
 ``` 
